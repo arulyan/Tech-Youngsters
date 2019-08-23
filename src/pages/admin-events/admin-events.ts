@@ -22,4 +22,7 @@ export class AdminEventsPage {
     console.log('ionViewDidLoad AdminEventsPage');
   }
 
+  adminHome(){
+    this.navCtrl.push('AdminHomePage');
+  }
 }

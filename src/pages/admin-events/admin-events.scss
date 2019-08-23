@@ -1,0 +1,36 @@
+page-admin-events {
+    .bg1{
+        position: absolute;
+    }
+    .bg2{
+        position: relative;
+        margin-top: 70%;
+        clip-path: polygon(0 30%, 100% 5%, 100% 100%, 0% 100%);
+
+    }
+    img{
+        height: 67%;
+    }
+    #off{
+        position: absolute;
+        color: white;
+        z-index: 1;
+        top:25%;
+	    left:50%;
+        transform: translate(-50%,-50%);
+        font-family: Billabong;
+        font-size: 100px;
+        text-align: center;
+    }
+    #on{
+        position: absolute;
+        color: white;
+        z-index: 1;
+        top:75%;
+	    left:50%;
+        transform: translate(-50%,-50%);
+        font-family: Billabong;
+        font-size: 90px;
+        text-align: center;
+    }
+}
