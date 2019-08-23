@@ -59,7 +59,7 @@ export class LoginPage {
   AdminLogin(){
     if(this.AdminEmail == "admin@srm.com"){
       if(this.AdminPass == "admin"){
-        this.navCtrl.push("AdminHomePage");
+        this.navCtrl.push("AdminEventsPage");
       }
       else{
         alert("Wrong Password");
