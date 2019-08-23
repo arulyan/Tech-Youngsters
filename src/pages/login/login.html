@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Welcome
+    </ion-title>
+  </ion-navbar>
+  <div padding>
+    <ion-segment [(ngModel)]="Login">
+      <ion-segment-button value="User">
+        User
+      </ion-segment-button>
+      <ion-segment-button value="Admin">
+        Admin
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content padding class="paddingTop">
+  <div [ngSwitch]="Login" >
+    <ion-list *ngSwitchCase="'User'">
+      <h1>User Login</h1>
+      <ion-item>
+        <ion-label floating>
+          Email
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="UserEmail">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          Password
+        </ion-label>
+        <ion-input type="Password" [(ngModel)]="UserPass"></ion-input>
+      </ion-item>
+      <br>
+      <button ion-button (click)="LoginUser()">Login</button>
+      <h6>Not Registered?</h6>
+      <button ion-button (click)="GoToSignUp()">Signup!</button>
+    </ion-list>
+
+    <!--Admin Login Page-->
+
+    <ion-list *ngSwitchCase="'Admin'">
+      <h1>Admin Login</h1>
+      <ion-item>
+        <ion-label floating>
+          Email
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="AdminEmail">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          Password
+        </ion-label>
+        <ion-input type="Password" [(ngModel)]="AdminPass"></ion-input>
+      </ion-item>
+      <br>
+      <button ion-button (click)="AdminLogin()">Login</button>
+
+    </ion-list>
+  </div>
+
+</ion-content>
