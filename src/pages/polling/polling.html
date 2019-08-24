@@ -10,8 +10,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>{{event.Question}}</h2>
+<ion-content padding >
+  <br>
+  <h2 style="text-align:center;">{{event.Question}}</h2>
+  <br>
   <!-- <ion-list>
     <button ion-item>
       {{ event.OptionA }}
@@ -26,23 +28,40 @@
       {{ event.OptionD }}
     </button>
   </ion-list> -->
+
   <ion-list radio-group [(ngModel)]="choice">
-    <ion-item>
-      <ion-label>{{ event.OptionA }}</ion-label>
-      <ion-radio value="a" checked></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ event.OptionB }}</ion-label>
-      <ion-radio value="b"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ event.OptionC }}</ion-label>
-      <ion-radio value="c"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>{{ event.OptionD }}</ion-label>
-      <ion-radio value="d"></ion-radio>
-    </ion-item>
+    <ion-card class="card-5 ti">
+      <ion-card-header>
+        <ion-item class="ti">
+          <ion-label>A)&nbsp;{{ event.OptionA }}</ion-label>
+          <ion-radio value="a" checked></ion-radio>
+        </ion-item>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="card-5">
+      <ion-card-header>
+        <ion-item>
+          <ion-label>B &nbsp;{{ event.OptionB }}</ion-label>
+          <ion-radio value="b"></ion-radio>
+        </ion-item>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="card-5">
+        <ion-card-header>
+          <ion-item>
+            <ion-label>C) &nbsp;{{ event.OptionC }}</ion-label>
+            <ion-radio value="c"></ion-radio>
+          </ion-item>
+        </ion-card-header>
+      </ion-card>
+      <ion-card class="card-5">
+          <ion-card-header>
+            <ion-item>
+              <ion-label>D) &nbsp;{{ event.OptionD }}</ion-label>
+              <ion-radio value="d"></ion-radio>
+            </ion-item>
+          </ion-card-header>
+        </ion-card>
   </ion-list>
-  <button ion-button (click)="run()">Submit</button>
+  <button ion-button block (click)="run()" class="suer">Submit</button>
 </ion-content>
