@@ -57,7 +57,7 @@ export class LoginPage {
   }
 
   AdminLogin(){
-    if(this.AdminEmail == "admin@srm.com"){
+    if(this.AdminEmail == "1234567890123456"){
       if(this.AdminPass == "admin"){
         this.navCtrl.push("AdminEventsPage");
       }
