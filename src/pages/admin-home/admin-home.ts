@@ -17,7 +17,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class AdminHomePage {
 
   events:any;
-
+  // colours:{
+  //   1:'#ff1aff',
+  //   2:'#39e600',
+  //   3:'#ff6600',
+  //   4:'#0052cc'
+  // }
   constructor(public navCtrl: NavController, public navParams: NavParams, private service: ServiceProvider) {
   }
 
@@ -36,6 +41,10 @@ export class AdminHomePage {
 
   eventSelected(event){
     this.navCtrl.push('PollingResultsPage',{goEvent:event});
+  }
+
+  goBack(){
+    this.navCtrl.pop();
   }
 
 }

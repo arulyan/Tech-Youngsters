@@ -16,6 +16,8 @@ import { Chart } from "chart.js";
 })
 export class PollingResultsPage {
   @ViewChild("barCanvas") barCanvas: ElementRef;
+  @ViewChild("doughnutCanvas") doughnutCanvas: ElementRef;
+  public doughnutChart: Chart;
   public barChart: Chart;
   event: any;
   data: any;
@@ -23,6 +25,8 @@ export class PollingResultsPage {
   b: number = 0;
   c: number = 0;
   d: number = 0;
+  max:number;
+  min:number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private service: ServiceProvider) {
     this.event = this.navParams.get('goEvent');
@@ -33,6 +37,8 @@ export class PollingResultsPage {
   ionViewDidEnter() {
     console.log('ionViewDidLoad PollingResultsPage');
     this.generateGraph();
+    this.max = Math.max(this.a,this.b,this.c,this.d);
+    this.min = Math.min(this.a,this.b,this.c,this.d);
   }
 
   getVotingResults() {
@@ -61,6 +67,7 @@ export class PollingResultsPage {
       console.log(this.d);
       console.log(res.json());
     })
+    
   }
 
   generateGraph(){
@@ -98,6 +105,25 @@ export class PollingResultsPage {
             }
           ]
         }
+      }
+    });
+
+    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+      type: "doughnut",
+      data: {
+        datasets: [
+          {
+            label: "# of Votes",
+            data: [this.a, this.b, this.c, this.d],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(34, 167, 240, 1)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)"
+            ],
+            hoverBackgroundColor: ["#FF6384", "#003d99", "#FFCE56", "#FF6384"]
+          }
+        ]
       }
     });
   }
