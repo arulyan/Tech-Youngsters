@@ -47,5 +47,8 @@ export class SignUpPage {
       }
     })
   }
+  goBack(){
+    this.navCtrl.pop();
+  }
 
 }

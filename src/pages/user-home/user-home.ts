@@ -41,4 +41,8 @@ export class UserHomePage {
     this.navCtrl.push('PollingPage',{goEvent:event});
   }
 
+  // goBack(){
+  //   this.navCtrl.pop();
+  // }
+
 }

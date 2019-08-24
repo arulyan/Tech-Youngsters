@@ -1,9 +1,14 @@
+
+
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">  </head>
+  </html>
+  
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Welcome
-    </ion-title>
-  </ion-navbar>
+  <br>
+  <br>
   <div padding>
     <ion-segment [(ngModel)]="Login">
       <ion-segment-button value="User">
@@ -15,7 +20,7 @@
     </ion-segment>
   </div>
 </ion-header>
-
+ <!--
 <ion-content padding class="paddingTop">
   <div [ngSwitch]="Login" >
     <ion-list *ngSwitchCase="'User'">
@@ -39,10 +44,12 @@
       <button ion-button (click)="GoToSignUp()">Signup!</button>
     </ion-list>
 
-    <!--Admin Login Page-->
+    //Admin Login Page
 
     <ion-list *ngSwitchCase="'Admin'">
       <h1>Admin Login</h1>
+
+
       <ion-item>
         <ion-label floating>
           Email
@@ -60,6 +67,59 @@
       <button ion-button (click)="AdminLogin()">Login</button>
 
     </ion-list>
-  </div>
+  </div>  -->
 
-</ion-content>
+ 
+  
+    
+    <ion-content padding class="bg-style" text-center>
+        <div >
+          <label class="trek">Vote</label>
+          </div>
+          <div [ngSwitch]="Login" >
+
+        <ion-list  class="st" *ngSwitchCase="'User'">
+          
+            
+    <ion-item style="margin-top:10px;">
+              <ion-label>   <ion-icon name="person"></ion-icon></ion-label>
+            <ion-input type="text"  [(ngModel)]="UserEmail" placeholder="Adhar Number:"></ion-input>
+          </ion-item>
+      
+          <ion-item style="padding-top:25px;">
+              <ion-label> <ion-icon name="key"></ion-icon></ion-label>
+            <ion-input type="password" [(ngModel)]="UserPass" placeholder="Password"></ion-input>
+          </ion-item>
+          <p style="font-size: 14px;text-align: center;">Forgot Password?</p>
+           
+        <button ion-button color="dot" outline class="login" (click)="LoginUser()">Login</button>
+        <p id="SignUp"  style="font-size: 16px;margin-top:-50px;">Not Registered?</p>
+       <div class="sen"> <a id="SignUp"  style="font-size: 16px; font-size: 18px; " (click)="GoToSignUp()">Signup!</a></div>
+        </ion-list>
+        
+        <ion-list *ngSwitchCase="'Admin'">
+           
+
+
+            <ion-item>
+              <ion-label floating>
+                Email
+              </ion-label>
+              <ion-input type="email" [(ngModel)]="AdminEmail">
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>
+                Password
+              </ion-label>
+              <ion-input type="Password" [(ngModel)]="AdminPass"></ion-input>
+            </ion-item>
+            <br>
+            <button ion-button color="dot" outline class="login3" (click)="AdminLogin()">Login</button>
+              </ion-list>
+              </div>
+      </ion-content>
+      
+ 
+
+   

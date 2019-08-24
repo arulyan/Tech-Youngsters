@@ -1,10 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Sign Up</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
+
+<!--<ion-content padding>
   <h1>User Signup</h1>
     <ion-list>
       <ion-item>
@@ -27,4 +23,48 @@
       </ion-item>
     </ion-list>
     <button ion-button (click)="SignUp()">Signup</button>
+</ion-content> -->
+
+<ion-content padding class="bg">
+    <ion-fab top left padding>
+        <button ion-fab mini color="danger" (click)="goBack()">
+            <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+        </ion-fab>
+
+  <label class="tq">Sign Up</label>
+  <br>
+  <br>
+
+<ion-card class="super" >
+
+   
+    <ion-item>
+      <ion-label>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="name" placeholder="Username:"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>
+          <ion-icon  name="person"></ion-icon>
+        </ion-label>
+        <ion-input   type="text" [(ngModel)]="email" placeholder="Aadhar Number:"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="key"></ion-icon>
+      </ion-label>
+      <ion-input  type="password" [(ngModel)]="pass" placeholder="Password:"></ion-input>
+    </ion-item>
+    <br>
+<br>
+
+</ion-card>
+
+  <br>
+  <button ion-button outline (click)="SignUp()" class="login">Signup</button>
+ 
 </ion-content>
